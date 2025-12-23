@@ -27,13 +27,45 @@ body {
 
 /* Top Bar */
 .top-bar {
-    background-color: rgba(44, 62, 80, 0.95);
+    background: linear-gradient(90deg, #00bcd4 0%, #0097a7 50%, #00bcd4 100%);
+    background-size: 200% 100%;
     backdrop-filter: blur(10px);
     color: white;
-    padding: 10px 0;
+    padding: 12px 0;
     font-size: 14px;
     position: relative;
     z-index: 101;
+    overflow: hidden;
+    animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.top-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
 }
 
 .top-bar .container {
@@ -41,27 +73,38 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
-.top-bar a {
-    color: white;
-    text-decoration: none;
-    margin-right: 30px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.top-bar a:hover {
-    color: #00bcd4;
-}
-
-.language-selector {
+.coming-soon-message {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    animation: fadeInDown 1s ease-out;
+}
+
+.coming-soon-text {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.construction-icon {
+    animation: rotate 4s linear infinite;
+    color: #FFD700;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Header Navigation - Enhanced Glass Effect */
