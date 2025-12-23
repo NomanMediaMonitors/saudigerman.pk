@@ -66,11 +66,9 @@ body {
 
 /* Header Navigation - Enhanced Glass Effect */
 header {
-    background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.6),
-        rgba(255, 255, 255, 0.6)
-    );
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.6),
+            rgba(255, 255, 255, 0.6));
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -177,13 +175,14 @@ nav {
     color: white;
     max-width: 800px;
     padding: 0 20px;
+    margin-top: 3vh;
 }
 
 .hero h1 {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
     animation: fadeInDown 0.8s ease-out;
 }
 
@@ -192,6 +191,7 @@ nav {
         opacity: 0;
         transform: translateY(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -226,6 +226,7 @@ nav {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -264,9 +265,12 @@ nav {
 }
 
 @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
     }
+
     50% {
         box-shadow: 0 4px 25px rgba(0, 188, 212, 0.6);
     }
@@ -353,7 +357,7 @@ nav {
     background: white;
     padding: 35px;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 2px solid transparent;
     position: relative;
@@ -374,7 +378,7 @@ nav {
 
 .info-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
     border-color: rgba(0, 188, 212, 0.3);
 }
 
@@ -439,6 +443,10 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
+        display: none;
+    }
+
+    .top-bar {
         display: none;
     }
 
